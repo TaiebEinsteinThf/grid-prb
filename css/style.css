@@ -1,0 +1,328 @@
+/* general format*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --maincolor:#765244;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.list-unstyled{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+
+}
+.section-padding{
+    padding: 40px 0;
+}
+.section-header{
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+.section-header .section-title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.section-header .line{
+    display: block;
+    width: 100px;
+    height: 3px;
+    margin: auto;
+    background-color: var(--maincolor);
+    transition: width 0.2s;
+}
+.section-header:hover .line{
+    width: 220px;
+}
+.marlef{
+    margin-left:24px ;
+ }
+ .marrigh{
+    margin-right: 44px;
+    
+ }
+/*header*/
+header{
+    padding: 30px 0;
+}
+header .header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-content img{    
+flex: 1;
+max-width: 170px;
+}
+/* nav */
+.header-content nav{
+flex: 3;
+text-align: center;
+}
+.header-content nav{
+    margin-left: 30px;
+}
+.header-content .login{
+    flex: 1;
+    text-align: right;
+    }
+.header-content nav ul li a{ 
+    padding: 10px 10px;
+    display: block;
+    font-weight: bold;
+}
+    .header-content nav ul li{ 
+    padding: 10px;
+    font-weight: bold;
+}
+.header-content nav ul li .link-item{
+    position: relative;
+    padding: 10px 12px;
+    display: block;
+    font-weight: bold;
+}
+.header-content nav ul li .link-item::before{
+    content: "";
+    position: absolute;
+    border-width: 0px 2px;
+    border-color: var(--maincolor);
+    border-style: solid;
+    width: 97%;
+    height:100% ;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;
+    transform: scale3d(1,0,1);
+    transform-origin: top;
+}
+.header-content nav ul li .link-item:hover::before{
+    transform: scale3d(1,1,1);
+
+}
+/* after*/
+.header-content nav ul li .link-item::after{
+    content: "";
+    position: absolute;
+    border-width: 2px 0px; 
+    border-color: var(--maincolor);
+    border-style: solid;
+    width: 100%;
+    height: 93% ;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;
+    transition-delay: 0.2s;
+    transform: scale3d(0,1,1);
+    transform-origin: left;
+}
+.header-content nav ul li .link-item:hover::after   {
+    transform: scale3d(1,1,1);
+}
+/*login and ul*/
+
+.header-content ul li {
+display: inline-block;
+padding: 0px 10px;
+}
+.header-content ul li ,.header-content ul li a{
+    color: var(--maincolor);
+}
+
+
+.header-content .login ul li:last-child i{
+    position: relative;
+
+}
+.header-content .login ul li:last-child i::after{
+    position: absolute;
+    content: "0";
+    background-color:red;
+    color: #fff;
+    bottom: -3px;
+    right: -14px;
+    padding: 4px;
+    font-size: 13px;
+border-radius: 50%;
+margin-right: 12px;
+}
+/*dropdwn*/
+.drop-down{
+    position: relative;
+}
+.drop-down-menu{
+    position: absolute;
+    width: 400px;
+    padding:5px;
+    border: 2px solid var(--maincolor);
+    margin-top: 5px;
+    background: #fff;
+    transform: scale(0); 
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+.drop-down:hover .drop-down-menu{
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+.drop-down-menu ul {
+    display: table-cell;
+     text-align: left;
+}
+.drop-down-menu ul li:first-child a {
+    display: block;
+    border-bottom: 1px dotted var(--maincolor);
+}
+ /* slider*/
+.div-solution{
+    position: relative;
+}
+section.slider img{
+    width: 100%;
+    }
+    .portfulio-overflot-center{
+        position: absolute;
+        bottom:20px;
+        left: 50%;
+        text-align: center;
+        visibility: hidden;
+        display:inline-block;
+        opacity: 0;
+        transition: 0.2s;
+    }
+    .slider:hover .portfulio-overflot-center{
+        visibility: visible;
+        opacity: 1;
+    } 
+    .icon{
+        padding: 5px;
+        margin: 0 8px;
+        border-radius: 50%;
+        background-color: blue;
+    }
+    .portfulio-overflot-center i:hover{
+        background-color: #f50909;
+    } 
+    /* catigoury*/
+    .my-div{
+        display: grid;
+        grid-template-columns:auto auto auto auto;
+        gap: 10px;
+    }
+    .catigoury-item{
+        position: relative;
+    }
+
+.catigoury-item img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.icon-angle {
+    position: absolute;
+    right:0;
+    bottom:0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background:var(--maincolor);
+    color: #fff;
+    text-align: center;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+.catigoury-item:hover .icon-angle{
+    visibility: visible;
+    opacity: 1;
+   
+}
+.catigoury-item-title ,.catigoury-item-title{
+    font-size: 22px;
+}
+/*section sprites*/
+.sprites{
+margin-top: 50px;
+}
+.sprites-items{
+    display: flex;
+}
+.sprite-item{
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid var(--maincolor);
+}
+.sprite-item:last-child {
+    border: 0;
+}
+.sprite-info h3 {
+    font-size: 20px;
+}
+.sprite-item .sprite-info span{
+    display: block;
+    color:var(--maincolor);
+    font-size: 15px;
+    font-weight: bold;
+}
+.sprite-item .sprite-icon{
+    background-image: url(../images/png-transparen.png);
+    height: 95px;
+    background-repeat: no-repeat;
+    
+}
+
+.sprite-icon-1{
+    background-position: 10px 0px;
+    transition: 0.5s;
+}
+.sprite-icon-2{
+    background-position: 10px -90px;
+    transition: 0.5s;
+
+}
+.sprite-icon-3{
+    background-position: 10px -250px;
+    transition: 0.5s;
+
+}
+.sprite-icon-4{
+    background-position: 10px -330px;
+    transition: 0.5s;
+
+}
+.sprite-icon-5{
+    background-position: 50px -90px;
+    transition: 0.5s;
+
+}
+.sprite-item:hover .sprite-icon-1{
+    background-position: 10px -90px;
+
+} 
+.sprite-item:hover .sprite-icon-2{
+    background-position: 10px -250px;
+
+} 
+.sprite-item:hover .sprite-icon-3{
+    background-position: 10px -330px;
+
+} 
+.sprite-item:hover .sprite-icon-4{
+    background-position: 50px -90px;
+
+} 
+.sprite-item:hover .sprite-icon-5{
+    background-position: 10px 0px;
+
+} 
